@@ -19,10 +19,8 @@ namespace WPFRepetition.Models
             set
             {
                 _counter = value;
-                CounterChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
-        public event EventHandler<EventArgs> CounterChanged;
     }
 }

@@ -1,0 +1,44 @@
+﻿<Window
+    x:Class="WPFRepetition.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WPFRepetition"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:WPFRepetition.ViewModels"
+    xmlns:views="clr-namespace:WPFRepetition.Views"
+    Title="Demo"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid x:Name="Root">
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:LeftViewModel}">
+                <views:LeftView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:CenterViewModel}">
+                <views:CenterView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:RightViewModel}">
+                <views:RightView />
+            </DataTemplate>
+        </Grid.Resources>
+        <!--<StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button
+                x:Name="ShowLeft"
+                Command="{Binding NavigateLeftCommand}"
+                Content="Show Left" />
+            <Button
+                x:Name="ShowCenter"
+                Command="{Binding NavigateCenterCommand}"
+                Content="Show Center" />
+            <Button
+                x:Name="ShowRight"
+                Command="{Binding NavigateRightCommand}"
+                Content="Show Right" />
+        </StackPanel>-->
+        <!--  Vi binder vyn i rutan på rad ett till det som navigationmanager har som current:  -->
+        <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}" />
+
+    </Grid>
+</Window>

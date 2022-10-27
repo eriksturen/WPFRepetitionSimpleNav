@@ -2,7 +2,6 @@
     x:Class="WPFRepetition.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:WPFRepetition"
-    StartupUri="RootWindow.xaml">
+    xmlns:local="clr-namespace:WPFRepetition">
     <Application.Resources />
 </Application>

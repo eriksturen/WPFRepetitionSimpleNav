@@ -12,27 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WPFRepetition.Models;
 
-namespace WPFRepetition.UserControls
+namespace WPFRepetition.Views
 {
     /// <summary>
-    /// Interaction logic for CenterView.xaml
+    /// Interaction logic for LeftView.xaml
     /// </summary>
-    public partial class CenterView : UserControl
+    public partial class LeftView : UserControl
     {
-        public DataModel DataModel { get; set; }
-
-        public CenterView()
+        public LeftView()
         {
             InitializeComponent();
-            DataModel = DataManager.DataModel;
-            DataContext = DataModel;
-        }
-
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            DataModel.Counter = 0;
         }
     }
 }

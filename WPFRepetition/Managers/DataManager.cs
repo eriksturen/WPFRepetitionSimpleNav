@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using WPFRepetition.Models;
 
-namespace WPFRepetition
+namespace WPFRepetition.Managers
 {
-    public static class DataManager
+    public class DataManager
     {
-        public static DataModel DataModel { get; set; } = new ();
+        public DataModel DataModel { get; set; } = new();
     }
 }
