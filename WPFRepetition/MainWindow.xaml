@@ -23,20 +23,16 @@
                 <views:RightView />
             </DataTemplate>
         </Grid.Resources>
-        <!--<StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button
-                x:Name="ShowLeft"
-                Command="{Binding NavigateLeftCommand}"
-                Content="Show Left" />
-            <Button
-                x:Name="ShowCenter"
-                Command="{Binding NavigateCenterCommand}"
-                Content="Show Center" />
-            <Button
-                x:Name="ShowRight"
-                Command="{Binding NavigateRightCommand}"
-                Content="Show Right" />
-        </StackPanel>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--  Lägger in knappar som stackpanel här igen:  -->
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding NavigateLeftCommand}" Content="Show Left" />
+            <Button Command="{Binding NavigateCenterCommand}" Content="Show Center" />
+            <Button Command="{Binding NavigateRightCommand}" Content="Show Right" />
+        </StackPanel>
         <!--  Vi binder vyn i rutan på rad ett till det som navigationmanager har som current:  -->
         <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}" />
 

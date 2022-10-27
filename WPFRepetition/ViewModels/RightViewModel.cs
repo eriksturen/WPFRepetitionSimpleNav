@@ -9,11 +9,8 @@ public class RightViewModel : ObservableObject
 {
     private readonly DataModel _dataModel;
 
-    private readonly NavigationManager _navigationManager;
     public IRelayCommand CountUpCommand { get; }
 
-    public IRelayCommand NavigateLeftCommand { get; }
-    public IRelayCommand NavigateRightCommand { get; }
 
     private int _counter;
 
@@ -27,16 +24,10 @@ public class RightViewModel : ObservableObject
         }
     }
 
-    public RightViewModel(DataModel dataModel, NavigationManager navigationManager)
+    public RightViewModel(DataModel dataModel)
     {
         _dataModel = dataModel;
-        _navigationManager = navigationManager;
         CountUpCommand = new RelayCommand(() => Counter++);
 
-        NavigateLeftCommand = new RelayCommand(() =>
-            _navigationManager.CurrentViewModel = new CenterViewModel(_dataModel, _navigationManager));
-
-        NavigateRightCommand = new RelayCommand(() =>
-            _navigationManager.CurrentViewModel = new LeftViewModel(_dataModel, _navigationManager));
     }
 }

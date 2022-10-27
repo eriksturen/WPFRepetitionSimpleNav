@@ -11,6 +11,10 @@ public class MainViewModel : ObservableObject
     private readonly NavigationManager _navigationManager;
     private readonly DataManager _dataManager;
 
+    public IRelayCommand NavigateLeftCommand { get; }
+    public IRelayCommand NavigateCenterCommand { get; }
+    public IRelayCommand NavigateRightCommand { get; }
+
     public ObservableObject CurrentViewModel
     {
         get { return _navigationManager.CurrentViewModel; }
@@ -22,6 +26,15 @@ public class MainViewModel : ObservableObject
     {
         _dataManager = dataManager;
         _navigationManager = navigationManager;
+
+        NavigateLeftCommand = new RelayCommand(() =>
+            _navigationManager.CurrentViewModel = new LeftViewModel(_dataManager.DataModel));
+
+        NavigateCenterCommand = new RelayCommand(() =>
+            _navigationManager.CurrentViewModel = new CenterViewModel(_dataManager.DataModel));
+
+        NavigateRightCommand = new RelayCommand(() =>
+            _navigationManager.CurrentViewModel = new RightViewModel(_dataManager.DataModel));
 
         _navigationManager.CurrentViewModelChanged += CurrentViewModelChanged;
 
